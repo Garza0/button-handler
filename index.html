@@ -7,13 +7,14 @@
     <title>Document</title>
 </head>
 <body><div style="height: 100px">
-    <div style="width: 30%; height: 50px; background-color: #4c8f44; border-radius: 50%; transition: all 2s; margin:auto;  "></div></div>
+    <div style="width: 30%; height: 50px; background-color: #4c8f44; border-radius: 50%; transition: all 2s; margin:auto; display:flex; "><p id="size"style='color:white; margin:auto;'></p></div></div>
     <button onclick="changeColor(color.value); countClicks()">Кнопка</button>  
     <input type="text" id="color" value="red">
     <p id="counter"></p>
+    
     <script>
+        var div = document.querySelector("div").querySelector("div")
         function changeColor(color) {
-            var div = document.querySelector("div").querySelector("div")
             div.style.backgroundColor = color
         }
         var clicks = 0
@@ -23,13 +24,20 @@
         }
         
         function makeBreathe() {
-            var div = document.querySelector("div").querySelector("div")
             if (div.style.width == '30%') div.style.width = '33%'
             else if (div.style.width == '33%') div.style.width = '30%'
             if (div.style.height == '50px') div.style.height = '80px'
             else if (div.style.height == '80px') div.style.height = '50px'
+            
         }
         setInterval(makeBreathe, 2001)
+
+        function showWidth() {
+            size.innerText = Math.round(div.getBoundingClientRect().width)+'px'
+            
+        }
+        setInterval(showWidth, 101)
+
     </script>
 </body>
 </html>
