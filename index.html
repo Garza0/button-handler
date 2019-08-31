@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div style="width: 30%; height: 50px; background-color: #4c8f44;"></div>
+    <button onclick="changeColor(color.value); countClicks()">Кнопка</button>  
+    <input type="text" id="color" value="red">
+    <p id="counter"></p>
+    <script>
+        function changeColor(color) {
+            var div = document.querySelector("div")
+            div.style.backgroundColor = color
+        }
+        var clicks = 0
+        function countClicks() {
+            clicks = clicks+1
+            counter.innerText = clicks
+        }
+        
+    
+    </script>
+</body>
+</html>
